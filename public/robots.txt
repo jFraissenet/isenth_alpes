@@ -1,0 +1,9 @@
+# robots.txt for isenthalpes.com
+User-agent: *
+Allow: /
+
+# Sitemap
+Sitemap: https://isenthalpes.com/sitemap.xml
+
+# Crawl-delay (optional, be nice to servers)
+Crawl-delay: 1
