@@ -685,6 +685,14 @@ const realisations = [
     min-height: 250px;
   }
 
+  .section-header {
+    margin-bottom: 3rem;
+  }
+
+  .section-header h2 {
+    font-size: 1.8rem;
+  }
+
   .contract-card.featured {
     transform: none;
   }
@@ -696,25 +704,128 @@ const realisations = [
 
 @media (max-width: 480px) {
   .expertise-hero {
-    padding: 100px 1rem 3rem;
+    padding: 90px 1rem 2rem;
+    min-height: 40vh;
+  }
+
+  .back-link {
+    font-size: 0.85rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .hero-icon {
+    width: 70px;
+    height: 70px;
+  }
+
+  .expertise-hero h1 {
+    font-size: 1.8rem;
+  }
+
+  .hero-subtitle {
+    font-size: 1rem;
   }
 
   .realisations-section,
   .contracts-section {
-    padding: 3rem 1rem;
+    padding: 2.5rem 1rem;
+  }
+
+  .section-label {
+    font-size: 0.8rem;
+    padding: 0.4rem 1rem;
+  }
+
+  .section-header h2 {
+    font-size: 1.5rem;
+  }
+
+  .section-header p {
+    font-size: 0.9rem;
+  }
+
+  .realisation-image {
+    min-height: 200px;
+  }
+
+  .realisation-badge {
+    font-size: 0.75rem;
+    padding: 0.3rem 0.8rem;
   }
 
   .realisation-content {
-    padding: 1.5rem;
+    padding: 1.2rem;
+  }
+
+  .realisation-content h3 {
+    font-size: 1.1rem;
+    margin-bottom: 0.5rem;
+  }
+
+  .realisation-description {
+    font-size: 0.85rem;
+    margin-bottom: 1rem;
   }
 
   .realisation-details {
     flex-direction: column;
-    gap: 0.8rem;
+    gap: 0.5rem;
+    margin-bottom: 1rem;
+    padding-bottom: 1rem;
+  }
+
+  .detail {
+    font-size: 0.85rem;
+  }
+
+  .realisation-features li {
+    font-size: 0.85rem;
+    padding: 0.3rem 0;
   }
 
   .contracts-grid {
     grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+
+  .contract-header {
+    padding: 1.5rem;
+  }
+
+  .contract-header h3 {
+    font-size: 1.3rem;
+  }
+
+  .contract-price .price {
+    font-size: 2rem;
+  }
+
+  .contract-features {
+    padding: 1.5rem;
+  }
+
+  .contract-features li {
+    font-size: 0.9rem;
+    padding: 0.6rem 0;
+  }
+
+  .cta-section {
+    padding: 3rem 1rem;
+  }
+
+  .cta-section h2 {
+    font-size: 1.4rem;
+  }
+
+  .cta-section p {
+    font-size: 0.95rem;
+  }
+
+  .cta-button {
+    padding: 0.9rem 2rem;
+    font-size: 1rem;
+    width: 100%;
+    justify-content: center;
   }
 }
 </style>

@@ -389,29 +389,109 @@
 }
 
 @media (max-width: 968px) {
+  .services-section {
+    padding: 5rem 1.5rem;
+  }
+
+  .section-header {
+    margin-bottom: 3rem;
+  }
+
+  .section-description {
+    font-size: 1rem;
+  }
+
   .service-block,
   .service-block.reverse {
     grid-template-columns: 1fr;
     gap: 2rem;
     direction: ltr;
+    margin-bottom: 4rem;
   }
 
   .service-image img {
-    height: 350px;
+    height: 280px;
   }
 
   .image-accent {
     display: none;
   }
+
+  .service-content h3 {
+    font-size: 1.6rem;
+  }
+
+  .service-intro {
+    font-size: 1.1rem;
+  }
+
+  .service-description {
+    font-size: 0.95rem;
+    line-height: 1.7;
+  }
 }
 
 @media (max-width: 480px) {
   .services-section {
-    padding: 4rem 1rem;
+    padding: 3rem 1rem;
+  }
+
+  .section-label {
+    font-size: 0.8rem;
+    padding: 0.4rem 1rem;
+  }
+
+  .section-title {
+    font-size: 1.6rem;
+  }
+
+  .section-description {
+    font-size: 0.9rem;
+  }
+
+  .service-block {
+    margin-bottom: 3rem;
   }
 
   .service-image img {
-    height: 250px;
+    height: 220px;
+    border-radius: 15px;
+  }
+
+  .service-icon {
+    width: 55px;
+    height: 55px;
+    border-radius: 12px;
+    margin-bottom: 1rem;
+  }
+
+  .service-icon svg {
+    width: 26px;
+    height: 26px;
+  }
+
+  .service-content h3 {
+    font-size: 1.4rem;
+    margin-bottom: 0.5rem;
+  }
+
+  .service-intro {
+    font-size: 1rem;
+  }
+
+  .service-description {
+    font-size: 0.9rem;
+    margin-bottom: 1rem;
+  }
+
+  .service-features li {
+    font-size: 0.9rem;
+    padding: 0.5rem 0;
+  }
+
+  .service-features svg {
+    width: 18px;
+    height: 18px;
   }
 }
 </style>

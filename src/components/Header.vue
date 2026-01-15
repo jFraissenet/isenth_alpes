@@ -1,36 +1,49 @@
 <template>
   <header class="header">
     <div class="header-container">
-      <router-link to="/" class="logo-section">
+      <router-link to="/" class="logo-section" @click="closeMenu">
         <img src="/logo.svg" alt="ISENTH'ALPES Logo" class="logo" />
         <h1 class="company-name">ISENTH'ALPES</h1>
       </router-link>
-      <nav class="navigation">
+      <nav class="navigation" :class="{ open: menuOpen }">
         <ul>
-          <li><router-link to="/">Accueil</router-link></li>
-          <li><router-link to="/#expertises">Expertises</router-link></li>
-          <li><router-link to="/#services">Services</router-link></li>
-          <li><router-link to="/#partenaires">Partenaires</router-link></li>
-          <li><router-link to="/#contact" class="btn-contact">Contact</router-link></li>
+          <li><router-link to="/" @click="closeMenu">Accueil</router-link></li>
+          <li><router-link to="/#expertises" @click="closeMenu">Expertises</router-link></li>
+          <li><router-link to="/#services" @click="closeMenu">Services</router-link></li>
+          <li><router-link to="/#partenaires" @click="closeMenu">Partenaires</router-link></li>
+          <li><router-link to="/#contact" class="btn-contact" @click="closeMenu">Contact</router-link></li>
         </ul>
       </nav>
-      <button class="mobile-menu-btn" @click="toggleMenu">
+      <button class="mobile-menu-btn" :class="{ active: menuOpen }" @click="toggleMenu">
         <span></span>
         <span></span>
         <span></span>
       </button>
     </div>
+    <div class="mobile-overlay" :class="{ open: menuOpen }" @click="closeMenu"></div>
   </header>
 </template>
 
 <script setup>
-import { ref } from 'vue'
+import { ref, watch } from 'vue'
+import { useRoute } from 'vue-router'
 
+const route = useRoute()
 const menuOpen = ref(false)
 
 const toggleMenu = () => {
   menuOpen.value = !menuOpen.value
+  document.body.style.overflow = menuOpen.value ? 'hidden' : ''
 }
+
+const closeMenu = () => {
+  menuOpen.value = false
+  document.body.style.overflow = ''
+}
+
+watch(route, () => {
+  closeMenu()
+})
 </script>
 
 <style scoped>
@@ -145,12 +158,110 @@ const toggleMenu = () => {
 }
 
 @media (max-width: 968px) {
+  .header-container {
+    padding: 0 1rem;
+  }
+
+  .company-name {
+    font-size: 1.2rem;
+    letter-spacing: 1px;
+  }
+
+  .logo {
+    height: 40px;
+  }
+
+  .logo-section {
+    gap: 0.5rem;
+  }
+
   .navigation {
+    position: fixed;
+    top: 0;
+    right: -100%;
+    width: 80%;
+    max-width: 320px;
+    height: 100vh;
+    background: white;
+    box-shadow: -5px 0 30px rgba(0, 0, 0, 0.15);
+    transition: right 0.3s ease;
+    z-index: 1001;
+    padding: 80px 2rem 2rem;
+  }
+
+  .navigation.open {
+    right: 0;
+  }
+
+  .navigation ul {
+    flex-direction: column;
+    gap: 0;
+  }
+
+  .navigation li {
+    border-bottom: 1px solid var(--bg-light);
+  }
+
+  .navigation a {
+    display: block;
+    padding: 1.2rem 0;
+    font-size: 1.1rem;
+  }
+
+  .navigation a::after {
     display: none;
+  }
+
+  .btn-contact {
+    display: inline-block;
+    margin-top: 1rem;
+    text-align: center;
+    width: 100%;
   }
 
   .mobile-menu-btn {
     display: flex;
+    z-index: 1002;
+  }
+
+  .mobile-menu-btn.active span:nth-child(1) {
+    transform: rotate(45deg) translate(6px, 6px);
+  }
+
+  .mobile-menu-btn.active span:nth-child(2) {
+    opacity: 0;
+  }
+
+  .mobile-menu-btn.active span:nth-child(3) {
+    transform: rotate(-45deg) translate(6px, -6px);
+  }
+
+  .mobile-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3s ease;
+    z-index: 1000;
+  }
+
+  .mobile-overlay.open {
+    opacity: 1;
+    visibility: visible;
+  }
+}
+
+@media (max-width: 480px) {
+  .company-name {
+    font-size: 1rem;
+  }
+
+  .logo {
+    height: 35px;
   }
 }
 </style>

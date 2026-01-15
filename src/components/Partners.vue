@@ -159,11 +159,14 @@ const partners = [
 .partners-section {
   padding: 8rem 2rem;
   background: linear-gradient(180deg, white 0%, var(--bg-warm) 100%);
+  overflow-x: hidden;
 }
 
 .container {
   max-width: 1200px;
   margin: 0 auto;
+  width: 100%;
+  box-sizing: border-box;
 }
 
 .section-header {
@@ -357,8 +360,61 @@ const partners = [
     padding: 4rem 1rem;
   }
 
+  .section-header {
+    margin-bottom: 2.5rem;
+  }
+
+  .section-description {
+    font-size: 1rem;
+  }
+
+  .partners-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+    margin-bottom: 3rem;
+  }
+
+  .partner-card {
+    padding: 1.5rem 1rem;
+  }
+
+  .partner-logo {
+    width: 60px;
+    height: 60px;
+    margin-bottom: 1rem;
+  }
+
+  .partner-initial {
+    font-size: 1.5rem;
+  }
+
+  .partner-card h3 {
+    font-size: 1.1rem;
+    margin-bottom: 0.5rem;
+  }
+
+  .partner-card p {
+    font-size: 0.85rem;
+    margin-bottom: 0.8rem;
+  }
+
+  .partner-category {
+    font-size: 0.75rem;
+    padding: 0.3rem 0.8rem;
+  }
+
   .qualifications-section {
     padding: 2rem 1rem;
+    border-radius: 16px;
+  }
+
+  .qualifications-title {
+    font-size: 1.4rem;
+  }
+
+  .qualifications-subtitle {
+    font-size: 0.9rem;
+    margin-bottom: 2rem;
   }
 
   .qualifications-grid {
@@ -371,16 +427,16 @@ const partners = [
   }
 
   .qualification-logo {
-    width: 55px;
-    height: 55px;
+    width: 50px;
+    height: 50px;
   }
 
   .qualification-text {
-    font-size: 0.9rem;
+    font-size: 0.85rem;
   }
 
   .qualification-card h4 {
-    font-size: 0.9rem;
+    font-size: 0.85rem;
   }
 
   .qualification-card p {
@@ -389,8 +445,78 @@ const partners = [
 }
 
 @media (max-width: 480px) {
+  .partners-section {
+    padding: 3rem 1rem;
+  }
+
+  .section-label {
+    font-size: 0.8rem;
+    padding: 0.4rem 1rem;
+  }
+
+  .section-title {
+    font-size: 1.6rem;
+  }
+
+  .partners-grid {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+
+  .partner-card {
+    padding: 1.2rem;
+  }
+
+  .partner-logo {
+    width: 55px;
+    height: 55px;
+    margin-bottom: 1rem;
+  }
+
+  .partner-initial {
+    font-size: 1.4rem;
+  }
+
+  .partner-card h3 {
+    font-size: 1rem;
+    margin-bottom: 0.4rem;
+  }
+
+  .partner-card p {
+    font-size: 0.85rem;
+    margin-bottom: 0.6rem;
+  }
+
+  .partner-category {
+    font-size: 0.75rem;
+  }
+
   .qualifications-grid {
     grid-template-columns: repeat(2, 1fr);
+    gap: 0.8rem;
+  }
+
+  .qualification-card {
+    padding: 1rem 0.5rem;
+  }
+
+  .qualification-logo {
+    width: 45px;
+    height: 45px;
+    margin-bottom: 0.8rem;
+  }
+
+  .qualification-text {
+    font-size: 0.8rem;
+  }
+
+  .qualification-card h4 {
+    font-size: 0.8rem;
+    margin-bottom: 0.2rem;
+  }
+
+  .qualification-card p {
+    font-size: 0.65rem;
   }
 }
 </style>

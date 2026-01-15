@@ -203,6 +203,10 @@ const expertises = [
   padding: 2.5rem 2rem;
   transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
   animation: fadeInUp 0.8s ease-out both;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
 }
 
 .expertise-card:hover {
@@ -241,6 +245,7 @@ const expertises = [
   font-size: 1rem;
   line-height: 1.6;
   margin-bottom: 1rem;
+  flex-grow: 1;
 }
 
 .card-link {
@@ -250,14 +255,12 @@ const expertises = [
   color: var(--accent-gold);
   font-size: 0.9rem;
   font-weight: 500;
-  opacity: 0;
-  transform: translateY(10px);
   transition: all 0.3s ease;
+  margin-top: auto;
 }
 
 .expertise-card:hover .card-link {
-  opacity: 1;
-  transform: translateY(0);
+  color: white;
 }
 
 .card-link svg {
@@ -310,6 +313,17 @@ const expertises = [
 @media (max-width: 768px) {
   .hero {
     padding: 100px 1rem 3rem;
+    min-height: auto;
+  }
+
+  .hero-title {
+    font-size: 2rem;
+    margin-bottom: 0.8rem;
+  }
+
+  .hero-subtitle {
+    font-size: 1rem;
+    margin-bottom: 2.5rem;
   }
 
   .expertise-cards {
@@ -321,15 +335,77 @@ const expertises = [
     padding: 1.5rem 1rem;
   }
 
+  .expertise-card h3 {
+    font-size: 1.1rem;
+    margin-bottom: 0.5rem;
+  }
+
+  .expertise-card p {
+    font-size: 0.85rem;
+    line-height: 1.5;
+    margin-bottom: 0.8rem;
+  }
+
   .card-icon {
-    width: 60px;
-    height: 60px;
+    width: 55px;
+    height: 55px;
+    margin-bottom: 1rem;
+  }
+
+  .card-icon svg {
+    width: 28px;
+    height: 28px;
+  }
+
+  .card-link {
+    font-size: 0.8rem;
+  }
+
+  .cta-button {
+    padding: 0.9rem 2rem;
+    font-size: 1rem;
   }
 }
 
 @media (max-width: 480px) {
+  .hero {
+    padding: 90px 1rem 2rem;
+  }
+
+  .hero-title {
+    font-size: 1.8rem;
+  }
+
+  .hero-subtitle {
+    font-size: 0.95rem;
+    margin-bottom: 2rem;
+  }
+
   .expertise-cards {
     grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+
+  .expertise-card {
+    padding: 1.5rem;
+  }
+
+  .expertise-card h3 {
+    font-size: 1.2rem;
+  }
+
+  .expertise-card p {
+    font-size: 0.9rem;
+  }
+
+  .card-icon {
+    width: 60px;
+    height: 60px;
+  }
+
+  .cta-button {
+    width: 100%;
+    justify-content: center;
   }
 }
 </style>
